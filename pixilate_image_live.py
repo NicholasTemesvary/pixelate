@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 class PixelateApp:
     def __init__(self, master):
         self.master = master
-        self.master.title("Live Pixelator 🎨")
+        self.master.title("Live Pixelator")
         self.master.geometry("800x700")
         self.image = None
         self.original_image = None
@@ -17,7 +17,7 @@ class PixelateApp:
         self.frame_controls = tk.Frame(master)
         self.frame_controls.pack(side=tk.TOP, pady=10)
 
-        self.btn_load = tk.Button(self.frame_controls, text="📂 Load Image", command=self.load_image)
+        self.btn_load = tk.Button(self.frame_controls, text="Load Image", command=self.load_image)
         self.btn_load.grid(row=0, column=0, padx=10)
 
         tk.Label(self.frame_controls, text="Pixel Size:").grid(row=0, column=1)
@@ -35,7 +35,7 @@ class PixelateApp:
         self.aspect_h.set(1.0)
         self.aspect_h.grid(row=0, column=6, padx=10)
 
-        self.btn_save = tk.Button(self.frame_controls, text="💾 Save Pixelated", command=self.save_image)
+        self.btn_save = tk.Button(self.frame_controls, text="Save Pixelated", command=self.save_image)
         self.btn_save.grid(row=0, column=7, padx=10)
 
         self.canvas = tk.Label(master)
@@ -89,7 +89,7 @@ class PixelateApp:
         base, ext = os.path.splitext(self.image_path)
         output_path = f"{base}_pixelated{ext}"
         self.image.save(output_path)
-        messagebox.showinfo("Saved", f"✅ Pixelated image saved as:\n{output_path}")
+        messagebox.showinfo("Saved", f"Pixelated image saved as:\n{output_path}")
 
 if __name__ == "__main__":
     root = tk.Tk()
